@@ -1,0 +1,14 @@
+package com.gestione_dispositivi.service;
+
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.gestione_dispositivi.repository.UserDaoRepository;
+
+public class UserService {
+	
+	@Autowired UserDaoRepository repoUser;
+	
+	@Autowired @Qualifier ("NuovoUtente") private ObjectProvider<User> fakeUserProvider;
+}

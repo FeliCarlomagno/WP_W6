@@ -1,0 +1,22 @@
+package com.gestione_dispositivi.service;
+
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.gestione_dispositivi.model.Device;
+import com.gestione_dispositivi.repository.DeviceDaoRepository;
+
+@Service
+public class DeviceService {
+	
+	@Autowired private DeviceDaoRepository repoDevice;
+	
+	@Autowired @Qualifier ("NuovoDispositivo") private ObjectProvider<Device> fakeDeviceProvider;
+	
+	public void saveDevice() {
+		Device d = fakeDeviceProvider.getObject();
+		repoDevice.save(d);
+	}
+}

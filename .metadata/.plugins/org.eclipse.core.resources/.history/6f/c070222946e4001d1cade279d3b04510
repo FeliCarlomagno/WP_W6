@@ -1,0 +1,22 @@
+package com.gestione_dispositivi.exception;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+@ControllerAdvice
+public class MyExceptionHandler {
+	
+	@ExceptionHandler(EntityExistsException.class)
+	ResponseEntity<String> manageEntityExistsException(EntityExistsException e) {
+		return new ResponseEntity<>(e.getMessage(), HttpStatus.FOUND);
+	}
+	
+	@ExceptionHandler(EntityNotFoundException.class)
+	ResponseEntity<String> manageEntityNotFoundException(EntityNotFoundException e) {
+		return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(Exception.class)
+	ResponseEntity<String> manageException(Exception e) {
+		return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+	}
+}

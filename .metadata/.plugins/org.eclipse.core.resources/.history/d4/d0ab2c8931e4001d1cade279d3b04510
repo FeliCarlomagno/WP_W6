@@ -1,0 +1,18 @@
+package com.gestione_dispositivi.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+import com.gestione_dispositivi.model.Device;
+
+@Configuration
+public class DeviceConfiguration {
+	
+	@Bean
+	@Scope("prototype")
+	public Device fakeDevice() {
+		
+		return d;
+	}
+}

@@ -1,0 +1,5 @@
+package com.gestione_dispositivi.service;
+
+public class DeviceService {
+
+}

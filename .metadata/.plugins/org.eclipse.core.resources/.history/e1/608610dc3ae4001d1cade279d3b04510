@@ -1,0 +1,11 @@
+package com.gestione_dispositivi.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import com.gestione_dispositivi.model.User;
+
+public interface UserDaoRepository extends CrudRepository<User, Long>, PagingAndSortingRepository<User, Long> {
+	boolean existByEmail(String email);
+	boolean existByUsername(String username);
+}

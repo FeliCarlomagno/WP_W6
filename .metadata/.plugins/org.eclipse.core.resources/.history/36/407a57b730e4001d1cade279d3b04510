@@ -1,0 +1,7 @@
+package com.gestione_dispositivi.enums;
+
+public enum TipoDispositivo {
+	TABLET,SMARTPHONE,LAPTOP
+	
+	private static final Random random = new Random();
+}

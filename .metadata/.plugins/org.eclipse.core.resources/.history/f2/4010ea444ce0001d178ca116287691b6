@@ -1,0 +1,15 @@
+package com.gestione_dispositivi.model;
+
+import com.gestione_dispositivi.enums.StatoDispositivo;
+import com.gestione_dispositivi.enums.TipoDispositivo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "devices")
+public class Device {
+	private Long id;
+	private TipoDispositivo tipoDispositivo;
+	private StatoDispositivo statoDispositivo;
+}

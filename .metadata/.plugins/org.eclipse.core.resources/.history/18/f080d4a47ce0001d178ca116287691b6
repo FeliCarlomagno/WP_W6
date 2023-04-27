@@ -1,0 +1,5 @@
+package com.gestione_dispositivi.configuration;
+
+public class DeviceConfiguration {
+
+}

@@ -1,0 +1,33 @@
+package com.gestione_dispositivi.service;
+
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.gestione_dispositivi.model.Device;
+import com.gestione_dispositivi.repository.DeviceDaoRepository;
+
+import jakarta.persistence.EntityNotFoundException;
+
+@Service
+public class DeviceService {
+	
+	@Autowired private DeviceDaoRepository repoDevice;
+	
+	@Autowired @Qualifier ("NuovoDispositivo") private ObjectProvider<Device> fakeDeviceProvider;
+	
+	public void saveDevice() {
+		Device d = fakeDeviceProvider.getObject();
+		repoDevice.save(d);
+	}
+	
+	public String removeDevice(Long id) {
+		if(repoDevice.existsById(id)) {
+			repoDevice.deleteById(id);
+		}else {
+			throw new EntityNotFoundException("DEVICE NOT EXIST ON DATABASE!!");
+		}
+		return "Device correctly removed!";
+	}
+}

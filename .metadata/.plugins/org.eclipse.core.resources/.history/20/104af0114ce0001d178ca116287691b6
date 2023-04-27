@@ -1,0 +1,10 @@
+package com.gestione_dispositivi.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "devices")
+public class Device {
+
+}

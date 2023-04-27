@@ -1,0 +1,13 @@
+package com.gestione_dispositivi.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gestione_dispositivi.service.DeviceService;
+import com.gestione_dispositivi.service.UserService;
+
+@RestController
+public class DeviceController {
+	@Autowired DeviceService deviceService;
+	@Autowired UserService userService;
+}
